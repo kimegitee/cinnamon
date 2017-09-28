@@ -10,7 +10,7 @@ def solution(input):
 	Returns:
 		result: int, max number of points on the same line
 	'''
-	input = set(input)
+	input = set(input) # No duplicates
 	if len(input) <= 2:
 		return len(input)
 	pairs = combinations(input, 2)

@@ -37,7 +37,11 @@ def parse(input):
 	return result
 
 def factor(input):
-	'''Return factored representation of formula'''
+	'''Return factored representation of formula
+	
+	Example:
+		KH2(OH)2 becomes kh2ohoh ("oh" repeated twice)
+	'''
 	input = input.lower()
 	if paren(input) == (-1, -1):
 		return input
@@ -69,8 +73,8 @@ def paren(input):
 		(int, int): indices of outer most or first pair of parens, 
 			(-1, -1) if no parens found
 	'''
-	o = 0
-	c = 0
+	o = 0 # Number of opening parens
+	c = 0 # Number of closing parens
 	start = -1
 	end = -1
 	for i, char in enumerate(input):
