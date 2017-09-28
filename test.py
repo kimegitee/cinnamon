@@ -1,0 +1,26 @@
+import unittest
+from problem1 import *
+
+class Problem1Test(unittest.TestCase):
+
+	def setUp(self):
+		self.input = 'K(OH)10O'
+		self.input2 = 'KH2(OH(OH)2(OH)3(OH(K5)2)20)6'
+		self.input3 = 'KH2(OH(OH)2(OH)3)2'
+
+	def test_paren(self):
+		self.assertEqual(paren(self.input), (1, 4))
+		self.assertEqual(paren(self.input2), (3, 27))
+
+	def test_parse(self):
+		self.assertEqual(parse(self.input), [10, 0, 11, 0, 1])
+		self.assertEqual(parse(self.input3), [14, 0, 12, 0, 1])
+		self.assertEqual(parse(self.input2), [158, 0, 156, 0, 1201])
+
+	def test_factor(self):
+		self.assertEqual(factor(self.input), 'kohohohohohohohohohoho')
+		self.assertEqual(factor(self.input3), 'kh2ohohohohohohohohohohohoh')
+
+	def test_solution(self):
+		self.assertEqual(solution(self.input), 225)
+		self.assertEqual(solution(self.input2), 49493)
