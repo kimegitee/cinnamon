@@ -1,5 +1,6 @@
 import unittest
 from problem1 import *
+import problem2 as p2
 
 class Problem1Test(unittest.TestCase):
 
@@ -24,3 +25,15 @@ class Problem1Test(unittest.TestCase):
 	def test_solution(self):
 		self.assertEqual(solution(self.input), 225)
 		self.assertEqual(solution(self.input2), 49493)
+
+class Problem2Test(unittest.TestCase):
+
+	def setUp(self):
+		self.n1 = 19
+		self.n2 = 931
+		self.n3 = 914
+
+	def test_solution(self):
+		self.assertTrue(p2.solution(self.n1))
+		self.assertTrue(p2.solution(self.n2))
+		self.assertFalse(p2.solution(self.n3))
