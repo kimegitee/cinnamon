@@ -31,5 +31,4 @@ def ismember(a, b, x):
 	xa, ya = a
 	xb, yb = b
 	xx, yx = x
-	print(a, b, x)
 	return True if (yx-ya)/(xx-xa) == (yb-ya)/(xb-xa) else False
