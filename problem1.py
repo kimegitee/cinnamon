@@ -2,6 +2,13 @@ import numpy as np
 
 def solution(input):
 	'''Given a molecular composition, calcute its weight
+
+	Params:
+		input: str of composition in a format similar to this
+			"KH2(OH(OH)2(OH)3(OH(K5)2)20)6"
+
+	Returns:
+		result: int, weight of input molecule
 	'''
 	return weight(parse(input))
 

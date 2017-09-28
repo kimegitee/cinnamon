@@ -1,6 +1,8 @@
 import unittest
+import numpy as np
 from problem1 import *
 import problem2 as p2
+import problem3 as p3
 
 class Problem1Test(unittest.TestCase):
 
@@ -37,3 +39,13 @@ class Problem2Test(unittest.TestCase):
 		self.assertTrue(p2.solution(self.n1))
 		self.assertTrue(p2.solution(self.n2))
 		self.assertFalse(p2.solution(self.n3))
+
+class Problem3Test(unittest.TestCase):
+
+	def setUp(self):
+		self.input = [(0, 0), (1, 1), (2, 2), (3, 3), (4, 3)]
+
+	def test_member(self):
+		self.assertTrue(p3.ismember((0, 0), (1, 1), (2, 2)))
+		self.assertFalse(p3.ismember((0, 0), (1, 1), (2, 3)))
+		self.assertEqual(p3.solution(self.input), 4)
